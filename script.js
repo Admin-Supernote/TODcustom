@@ -8,7 +8,7 @@ const translations = {
   en: {
     setup: "Setup Session",
     enterNames: "Enter participant names (2 or more):",
-    enterDares: "Enter your Dare questions:",
+    enterDares: "Enter your Dare challenges:",
     enterTruths: "Enter your Truth questions:",
     startGame: "START GAME",
     truth: "Truth",
@@ -20,7 +20,7 @@ const translations = {
   it: {
     setup: "Sessione di Configurazione",
     enterNames: "Inserisci i nomi dei partecipanti (2 o più):",
-    enterDares: "Inserisci le tue domande per Obbligo:",
+    enterDares: "Inserisci le tue sfide per Obbligo:",
     enterTruths: "Inserisci le tue domande per Verità:",
     startGame: "INIZIA IL GIOCO",
     truth: "Verità",
@@ -29,7 +29,42 @@ const translations = {
     selectLanguage: "Seleziona la tua lingua:",
     finishSetup: "TERMINA CONFIGURAZIONE",
   },
-  // Aggiungi altre lingue se necessario
+  fr: {
+    setup: "Session de Configuration",
+    enterNames: "Entrez les noms des participants (2 ou plus) :",
+    enterDares: "Entrez vos défis pour les Gages :",
+    enterTruths: "Entrez vos questions pour Vérité :",
+    startGame: "COMMENCER LE JEU",
+    truth: "Vérité",
+    dare: "Gage",
+    playerTurn: ": c'est à votre tour !",
+    selectLanguage: "Choisissez votre langue :",
+    finishSetup: "TERMINER LA CONFIGURATION",
+  },
+  de: {
+    setup: "Einstellungsphase",
+    enterNames: "Teilnehmernamen eingeben (mindestens 2):",
+    enterDares: "Geben Sie Ihre Mut-Herausforderungen ein:",
+    enterTruths: "Geben Sie Ihre Wahrheit-Fragen ein:",
+    startGame: "SPIEL STARTEN",
+    truth: "Wahrheit",
+    dare: "Mut",
+    playerTurn: "ist an der Reihe!",
+    selectLanguage: "Wähle deine Sprache:",
+    finishSetup: "KONFIGURATION ABSCHLIESSEN",
+  },
+  es: {
+    setup: "Sesión de Configuración",
+    enterNames: "Ingresa los nombres de los participantes (2 o más):",
+    enterDares: "Introduce tus desafíos para el Reto:",
+    enterTruths: "Introduce tus preguntas para la Verdad:",
+    startGame: "EMPEZAR JUEGO",
+    truth: "Verdad",
+    dare: "Reto",
+    playerTurn: "¡es su turno!",
+    selectLanguage: "Selecciona tu idioma:",
+    finishSetup: "FINALIZAR CONFIGURACIÓN",
+  }
 };
 
 // Function to update the UI text based on the selected language
@@ -160,7 +195,7 @@ document.getElementById("dareButton").addEventListener("click", function() {
     document.getElementById("questionDisplay").textContent = translations[selectedLanguage].dare + ": " + dare;
     document.getElementById("continueGame").classList.remove("hidden");
   } else {
-    alert("There are no dare questions available.");
+    alert("There are no dare challenges available.");
   }
 });
 
