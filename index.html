@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Truth or Dare Customized</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="container">
+    <h1>Truth or Dare Customized</h1>
+    <p>You are tired to play Truth or Dare that you will not do cause they are insane?<br>
+    TODCustomized is your solution! You can input your question and dare in the fields and have fun by deciding somethings you will always do!</p>
+    <button id="setupButton">Click the SETUP button below ⬇️ to start setup session!</button>
+  </div>
+  
+  <!-- Setup Modal -->
+  <div id="setupModal" class="modal">
+    <div class="modal-content">
+      <h2>Setup Session</h2>
+      <div id="setupSteps">
+        <!-- Language Selection -->
+        <div id="step1" class="step">
+          <p>Select your language:</p>
+          <select id="languageSelect">
+            <option value="en">English</option>
+            <option value="it">Italiano</option>
+            <option value="fr">Français</option>
+          </select>
+          <button id="continueStep1">CONTINUE</button>
+        </div>
+        
+        <!-- Participant Names -->
+        <div id="step2" class="step">
+          <p>Enter participant names (2 or more):</p>
+          <input type="text" id="participantInput" placeholder="Name">
+          <button id="addParticipant">Add Participant</button>
+          <ul id="participantList"></ul>
+          <button id="continueStep2">CONTINUE</button>
+        </div>
+        
+        <!-- Dare Questions -->
+        <div id="step3" class="step">
+          <p>Enter your Dare questions:</p>
+          <input type="text" id="dareInput" placeholder="Enter a dare">
+          <button id="addDare">Add Dare</button>
+          <ul id="dareList"></ul>
+          <button id="continueStep3">CONTINUE</button>
+        </div>
+        
+        <!-- Truth Questions -->
+        <div id="step4" class="step">
+          <p>Enter your Truth questions:</p>
+          <input type="text" id="truthInput" placeholder="Enter a truth">
+          <button id="addTruth">Add Truth</button>
+          <ul id="truthList"></ul>
+          <button id="finishSetup">FINISH SETUP</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Game Screen -->
+  <div id="gameScreen" class="game-screen hidden">
+    <h2 id="playerTurn"></h2>
+    <p>Truth or Dare?</p>
+    <button id="truthButton">Truth</button>
+    <button id="dareButton">Dare</button>
+    <p id="questionDisplay"></p>
+    <button id="continueGame" class="hidden">CONTINUE</button>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
