@@ -51,6 +51,7 @@ document.getElementById("languageSelect").addEventListener("change", function() 
 
 // Show Setup Modal
 document.getElementById("setupButton").addEventListener("click", function() {
+  document.querySelector('.container').classList.add('hidden'); // Nascondere la descrizione
   document.getElementById("setupModal").style.display = "flex";
   document.getElementById("step1").style.display = "block";
 });
