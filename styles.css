@@ -1,7 +1,8 @@
+/* Impostazioni base */
 body {
   font-family: 'Arial', sans-serif;
-  background-color: #f5f5f5;
-  color: #333;
+  background-color: #1e1e1e;
+  color: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -11,21 +12,34 @@ body {
 
 .container {
   text-align: center;
-  background: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background: #292929;
+  padding: 40px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.5);
+  width: 80%;
+  max-width: 600px;
+}
+
+h1 {
+  font-size: 36px;
+  margin-bottom: 20px;
+}
+
+p {
+  font-size: 18px;
+  line-height: 1.5;
 }
 
 button {
-  padding: 10px 20px;
-  font-size: 16px;
+  padding: 15px 30px;
+  font-size: 18px;
   margin: 10px 0;
   cursor: pointer;
-  border-radius: 5px;
+  border-radius: 8px;
   background-color: #007bff;
   color: white;
   border: none;
+  transition: background-color 0.3s ease;
 }
 
 button:hover {
@@ -39,17 +53,19 @@ button:hover {
   left: 0;
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.5);
+  background-color: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
 }
 
 .modal-content {
-  background-color: white;
-  padding: 20px;
-  border-radius: 10px;
-  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  background-color: #333;
+  padding: 30px;
+  border-radius: 15px;
+  box-shadow: 0px 4px 15px rgba(0, 0, 0, 0.7);
   text-align: center;
+  width: 80%;
+  max-width: 500px;
 }
 
 .step {
@@ -60,6 +76,57 @@ button:hover {
   display: none;
 }
 
+/* Estetica per la schermata di gioco */
 .game-screen {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   text-align: center;
+  height: 100vh;
+  width: 100%;
+}
+
+#playerTurn {
+  font-size: 28px;
+  margin-bottom: 20px;
+}
+
+#truthButton, #dareButton {
+  padding: 20px 50px;
+  font-size: 24px;
+  margin: 20px;
+  border-radius: 10px;
+}
+
+#questionDisplay {
+  font-size: 28px;
+  margin-top: 40px;
+}
+
+#continueGame {
+  margin-top: 30px;
+  font-size: 22px;
+}
+
+.game-screen.hidden {
+  display: none;
+}
+
+/* Estetica migliorata del titolo */
+h1 {
+  font-size: 48px;
+  color: #ff3d00;
+  font-weight: bold;
+}
+
+p {
+  font-size: 18px;
+  color: #b5b5b5;
+}
+
+/* Schermata in modalità gioco */
+h2 {
+  font-size: 36px;
+  color: #ff3d00;
 }
