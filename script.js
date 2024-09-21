@@ -76,8 +76,12 @@ document.getElementById("addParticipant").addEventListener("click", function() {
 
 // Step 2: Continue to Dares
 document.getElementById("continueStep2").addEventListener("click", function() {
-  document.getElementById("step2").style.display = "none";
-  document.getElementById("step3").style.display = "block";
+  if (participants.length >= 2) { // Assicurati che ci siano almeno 2 partecipanti
+    document.getElementById("step2").style.display = "none";
+    document.getElementById("step3").style.display = "block";
+  } else {
+    alert("Please add at least 2 participants!");
+  }
 });
 
 // Step 3: Add Dare
@@ -94,8 +98,12 @@ document.getElementById("addDare").addEventListener("click", function() {
 
 // Step 3: Continue to Truths
 document.getElementById("continueStep3").addEventListener("click", function() {
-  document.getElementById("step3").style.display = "none";
-  document.getElementById("step4").style.display = "block";
+  if (dares.length > 0) { // Assicurati che ci siano obblighi
+    document.getElementById("step3").style.display = "none";
+    document.getElementById("step4").style.display = "block";
+  } else {
+    alert("Please add at least 1 dare!");
+  }
 });
 
 // Step 4: Add Truth
@@ -112,9 +120,13 @@ document.getElementById("addTruth").addEventListener("click", function() {
 
 // Finish Setup and Start Game
 document.getElementById("finishSetup").addEventListener("click", function() {
-  document.getElementById("setupModal").style.display = "none";
-  document.getElementById("gameScreen").classList.remove("hidden");
-  startGame();
+  if (truths.length > 0) { // Assicurati che ci siano verità
+    document.getElementById("setupModal").style.display = "none";
+    document.getElementById("gameScreen").classList.remove("hidden");
+    startGame();
+  } else {
+    alert("Please add at least 1 truth!");
+  }
 });
 
 // Function to Start Game
@@ -131,17 +143,25 @@ function pickRandomPlayer() {
 
 // Handle Truth or Dare selection
 document.getElementById("truthButton").addEventListener("click", function() {
-  let randomIndex = Math.floor(Math.random() * truths.length);
-  let truth = truths[randomIndex];
-  document.getElementById("questionDisplay").textContent = translations[selectedLanguage].truth + ": " + truth;
-  document.getElementById("continueGame").classList.remove("hidden");
+  if (truths.length > 0) {
+    let randomIndex = Math.floor(Math.random() * truths.length);
+    let truth = truths[randomIndex];
+    document.getElementById("questionDisplay").textContent = translations[selectedLanguage].truth + ": " + truth;
+    document.getElementById("continueGame").classList.remove("hidden");
+  } else {
+    alert("There are no truth questions available.");
+  }
 });
 
 document.getElementById("dareButton").addEventListener("click", function() {
-  let randomIndex = Math.floor(Math.random() * dares.length);
-  let dare = dares[randomIndex];
-  document.getElementById("questionDisplay").textContent = translations[selectedLanguage].dare + ": " + dare;
-  document.getElementById("continueGame").classList.remove("hidden");
+  if (dares.length > 0) {
+    let randomIndex = Math.floor(Math.random() * dares.length);
+    let dare = dares[randomIndex];
+    document.getElementById("questionDisplay").textContent = translations[selectedLanguage].dare + ": " + dare;
+    document.getElementById("continueGame").classList.remove("hidden");
+  } else {
+    alert("There are no dare questions available.");
+  }
 });
 
 // Continue to next round
